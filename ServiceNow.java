@@ -27,8 +27,9 @@ public class ServiceNow {
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://dev35942.service-now.com/login.do?user_name=admin&sys_action=sysverb_login&user_password=u7eUCFhFIcv8");
-		Thread.sleep(2000);
+		driver.get("https://dev35942.service-now.com/");
+		Thread.sleep(10000);
+		driver.switchTo().frame("gsft_main");	
 		driver.findElement(By.xpath("//input[@id='user_name']")).sendKeys("admin");
 		driver.findElement(By.xpath("//input[@id='user_password']")).sendKeys("London@2014");
 		driver.findElement(By.xpath("//button[@id='sysverb_login']")).click();
